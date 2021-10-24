@@ -23,7 +23,7 @@ type Auth {
     user: User
 }
 
-type input saveBookInput {
+input saveBookInput {
     authors: [String]
     description: String
     title: String

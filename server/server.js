@@ -9,8 +9,9 @@ const db = require('./config/connection');
 //remove routes?
 const routes = require('./routes');
 
-const app = express();
 const PORT = process.env.PORT || 3001;
+const app = express();
+
 
 const server = new ApolloServer({
   typeDefs,
@@ -29,7 +30,6 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
-app.use(routes);
 
 db.once('open', () => {
   app.listen(PORT, () => {
